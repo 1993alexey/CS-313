@@ -5,7 +5,7 @@
     <li>
       <a href="#">Assignments</a>
       <ul class="hidden">
-        <li><a href="future-assignment.php">Week 2</a></li>
+        <li><a href="about.php">Week 2</a></li>
         <li><a href="future-assignment.php">Week 3</a></li>
         <li><a href="future-assignment.php">Week 4</a></li>     
         <li><a href="future-assignment.php">Week 5</a></li>  
