@@ -1,0 +1,21 @@
+.container-intro {
+    margin-top: 80px;
+    display: flex;
+}
+
+.container-intro .item {
+  flex-grow: 1;
+  height: 100px;
+  text-align: center;
+}
+
+.item + .item {
+  margin-left: 2%;
+}
+
+.wife-me {
+    width: 350px;
+    margin: 0 20px;
+    border-radius: 50%;
+    height: 500px
+}
