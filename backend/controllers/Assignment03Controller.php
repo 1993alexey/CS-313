@@ -29,7 +29,7 @@ class Assignment03Controller extends Controller {
     }
 
     private function getItems() {
-        echo file_get_contents("./data/assignment3-items.json");
+        echo file_get_contents("data/assignment3-items.json");
     }
 
     private function saveCart() {
