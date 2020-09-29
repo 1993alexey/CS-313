@@ -19,19 +19,6 @@ function App() {
     <>
       <Router>
         <NavBar />
-        {/* <div>
-          <ul>
-            <li>
-              <Link to="/test">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/topics">Topics</Link>
-            </li>
-          </ul> */}
-
         <Switch>
           <Route exact path="/">
             <Redirect to="/about" />

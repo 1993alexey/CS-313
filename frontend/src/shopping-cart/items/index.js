@@ -21,9 +21,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Items(props) {
     const classes = useStyles();
-    const items = props.items.map(item => {
+    const items = props.items.map((item, i) => {
         return (
-            <Grid item sm={3} key={item.id}>
+            <Grid item sm={3} key={item.i}>
                 <ShoppingItem handleAdd={props.handleAdd} handleDelete={props.handleDelete} item={item}></ShoppingItem>
             </Grid>
         )

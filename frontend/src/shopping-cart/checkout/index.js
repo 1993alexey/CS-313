@@ -57,9 +57,8 @@ export default function Checkout(props) {
         const newAddress = { addressLine1, addressLine2, city, state, zipCode, country }
         setAddress(newAddress)
         checkout(newAddress).then(res => {
-            if (res.status === 200)
-                setPurchasedItems(res.body)
-        })
+            setPurchasedItems(res)
+        }).catch(console.log)
     }
 
     if (purchasedItems.length)
@@ -72,20 +71,20 @@ export default function Checkout(props) {
             <Button variant="contained" color="secondary" className={classes.viewCart} onClick={handleCheckout}>	&nbsp;<DoneIcon />Finish</Button>
             <Button color="primary" className={classes.viewCart} component={Link} to="/assignment3/cart">	&nbsp;<ArrowBackIcon />Back to cart</Button>
             <form noValidate className={classes.root} autoComplete="off">
-                <TextField id="address-line-1" label="Address line 1" required value="347 S 4th W"/>
-                <TextField id="address-line-2" label="Address line 2" value="Test" />
+                <TextField id="address-line-1" label="Address line 1" required />
+                <TextField id="address-line-2" label="Address line 2" />
                 <TextField id="city" label="City" required value="Rexburg" />
                 <FormControl required>
                     <InputLabel id="state">State</InputLabel>
-                    <Select labelId="state" id="state" native value="Idaho">
+                    <Select labelId="state" id="state" native>
                         <option aria-label="None" value="" />
                         {stateItems}
                     </Select>
                 </FormControl>
-                <TextField id="zip-code" label="Zip code" required value="83440" />
+                <TextField id="zip-code" label="Zip code" required />
                 <FormControl required>
                     <InputLabel id="country">Country</InputLabel>
-                    <Select labelId="country" id="country" native value="United States">
+                    <Select labelId="country" id="country" native >
                         <option aria-label="None" value="" />
                         {countryItems}
                     </Select>

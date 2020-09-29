@@ -18,9 +18,6 @@ class RouterController extends Controller {
             $this->redirect('error');
 
         $this->controller->process($parsedUrl);
-        // echo($controllerClass);
-        // echo('<br />');
-        // print_r($parsedUrl);    
     }
 
     private function parseUrl($url) {

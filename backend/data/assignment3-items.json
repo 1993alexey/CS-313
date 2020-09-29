@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "title": "iPhone 4",
+        "price": 50,
+        "description": "Not a good phone in 2020"
+    },
+    {
+        "id": 2,
+        "title": "iPhone 5",
+        "price": 80,
+        "description": "A little better than 4, but still not worth it"
+    },
+    {
+        "id": 3,
+        "title": "iPhone 6",
+        "price": 150,
+        "description": "This phone is ok for simple tasks"
+    },
+    {
+        "id": 4,
+        "title": "iPhone 6s",
+        "price": 190,
+        "description": "Perfect for school"
+    },
+    {
+        "id": 5,
+        "title": "iPhone 7",
+        "price": 250,
+        "description": "Best phone for the money. No as good as iPhone X and newer"
+    },
+    {
+        "id": 6,
+        "title": "iPhone 8",
+        "price": 300,
+        "description": "Similar to 8"
+    },
+    {
+        "id": 7,
+        "title": "iPhone X",
+        "price": 400,
+        "description": "First full-screen apple phone ever!!!"
+    },
+    {
+        "id": 8,
+        "title": "iPhone XR",
+        "price": 500,
+        "description": "Amazing camera and processor"
+    }
+]

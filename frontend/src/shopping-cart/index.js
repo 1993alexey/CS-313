@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import ShoppingItem from './items/item/index'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Items from './items/index'
-import { getCart, getItems } from './service'
+import { getCart, getItems, saveCart } from './service'
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
@@ -30,17 +30,14 @@ export default function ShoppingCart() {
     const [items, setItems] = useState([])
 
     function handleAdd(item) {
-        setCart([...cart, item])
+        const newCart = [...cart, item]
+        saveCart(newCart)
+        setCart(newCart)
     }
 
     useEffect(() => {
-        getItems().then(val => {
-            setItems(val)
-        })
-
-        getCart().then(val => {
-            setCart(val)
-        })
+        getItems().then(setItems)
+        getCart().then(setCart)
     }, [true])
     
     return (

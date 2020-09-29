@@ -37,7 +37,7 @@ export default function ShoppingItem(props) {
             </CardContent>
             <CardActions>
                 {props.handleAdd &&
-                <Button size="small" color="primary" onClick={props.handleAdd}>
+                <Button size="small" color="primary" onClick={() => props.handleAdd(props.item)}>
                     <AddShoppingCartIcon></AddShoppingCartIcon>Add to cart
                 </Button>}
                 
