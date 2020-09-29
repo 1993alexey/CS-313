@@ -36,7 +36,7 @@
 
     # Rewrite all other queries to the front controller.
     RewriteCond %{REQUEST_URI} ^/api
-    RewriteRule (.*) IndexController.php
+    RewriteRule (.*) /IndexController.php
 
     RewriteCond %{REQUEST_URI} ^\/static
     RewriteRule (.*) public/%{REQUEST_URI} 
