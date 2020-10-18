@@ -14,7 +14,7 @@ import { login } from "./login-service";
 import { useHistory } from "react-router-dom";
 
 export default function Login() {
-  const [username, setUsername] = useState("");
+  const [username, setUsername] = useState("Alex");
   const history = useHistory();
 
   function handleSubmit(event) {
