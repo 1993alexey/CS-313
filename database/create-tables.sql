@@ -14,7 +14,7 @@ CREATE TABLE public.recipe
 (
     id SERIAL NOT NULL PRIMARY KEY,
     name VARCHAR(100) NOT NULL UNIQUE,
-    ingridients VARCHAR (200) NOT NULL,
+    ingredients VARCHAR (200) NOT NULL,
     type_id INT NOT NULL REFERENCES public.recipe_type(id),
     instructions TEXT NOT NULL
 );
@@ -33,7 +33,7 @@ CREATE TABLE public.meal_plan
     user_id INT REFERENCES public.user(id),
     monday INT REFERENCES public.meal(id),
     tuesday INT REFERENCES public.meal(id),
-    wednsday INT REFERENCES public.meal(id),
+    wednesday INT REFERENCES public.meal(id),
     thursday INT REFERENCES public.meal(id),
     friday INT REFERENCES public.meal(id),
     saturday INT REFERENCES public.meal(id),

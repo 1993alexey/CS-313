@@ -41,10 +41,6 @@ class Assignment03Controller extends Controller {
         echo $_SESSION["cart"];
     }
 
-    private function notFound() {
-        header("HTTP/1.1 404 Not Found");
-    }
-
     private function checkout() {
         $json = file_get_contents('php://input');
         $body = json_decode($json, true);

@@ -1,18 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect
+  Redirect,
 } from "react-router-dom";
 
-import NavBar from './nav-bar/index'
-import About from './about/index'
-import ShoppingCart from './shopping-cart/index'
-import Cart from './shopping-cart/cart/index'
-import Checkout from './shopping-cart/checkout/index'
+import NavBar from "./nav-bar/index";
+import About from "./about/index";
+import ShoppingCart from "./shopping-cart/index";
+import Cart from "./shopping-cart/cart/index";
+import Checkout from "./shopping-cart/checkout/index";
+import WeeklyPlan from "./meal-planner/weekly-plan/index";
+import RecipeList from "./meal-planner/recipe-list/index";
+import NewRecipe from "./meal-planner/new-recipe/index";
+import ProtectedRoute from "./shared/login/ProtectedRoute";
+import Login from "./shared/login/index";
 
 function App() {
   return (
@@ -24,7 +29,7 @@ function App() {
             <Redirect to="/about" />
           </Route>
           <Route path="/about">
-              <About />
+            <About />
           </Route>
           <Route exact path="/assignment3">
             <ShoppingCart />
@@ -35,9 +40,21 @@ function App() {
           <Route path="/assignment3/checkout">
             <Checkout />
           </Route>
-          </Switch>
-        </Router>
-      </>
+          <Route exact path="/login">
+            <Login />
+          </Route>
+          <ProtectedRoute exact path="/assignment4" component={WeeklyPlan} />
+          <ProtectedRoute
+            path="/assignment4/recipe-list"
+            component={RecipeList}
+          />
+          <ProtectedRoute
+            path="/assignment4/new-recipe"
+            component={NewRecipe}
+          />
+        </Switch>
+      </Router>
+    </>
   );
 }
 
