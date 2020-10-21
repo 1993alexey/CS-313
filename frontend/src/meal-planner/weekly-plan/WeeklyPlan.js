@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import PlannerHeader from '../meal-planner-header/MealPlannerHeader'
 import './weekly-plan.css'
-import {getPlan, getRecipes} from '../service'
+import {getPlan, getRecipes, savePlan} from '../service'
 
 export default function WeeklyPlan() {
     const [plan, setPlan] = useState({})
@@ -27,6 +27,17 @@ export default function WeeklyPlan() {
 
     }, [Object.keys(plan).length])
 
+    function handleChange(e) {
+        const el = e.target
+        const mealTime = el.id.replace('-selection', '')
+        const day = el.parentElement.parentElement.parentElement.parentElement.firstElementChild.innerText.toLowerCase()
+        const id = el.value != '0' ? el.value : null
+
+        plan[day][mealTime + '_id'] = id
+        setPlan(plan)
+        savePlan(plan)
+    }
+
     const meals = Object.keys(plan).filter(key => key != 'id' && key != 'user_id').map(key => {
 
         const day = key[0].toUpperCase() + key.substring(1)
@@ -48,10 +59,10 @@ export default function WeeklyPlan() {
                     <div className="day-body">
                         <div className="row">
                             <div className="col-25">
-                                <label>Breakfas</label>
+                                <label>Breakfast</label>
                             </div>
                             <div className="col-75">
-                                <select id="type" name="type">
+                                <select id="breakfast-selection" name="type" onChange={handleChange}>
                                     <option value="0">=== Select a recipe ===</option>
                                     {breakfastOptions}
                                 </select>
@@ -62,7 +73,7 @@ export default function WeeklyPlan() {
                                 <label>Lunch</label>
                             </div>
                             <div className="col-75">
-                                <select id="type" name="type">
+                                <select id="lunch-selection" name="type" onChange={handleChange}>
                                     <option value="0">=== Select a recipe ===</option>
                                     {lunchOptions}
                                 </select>
@@ -73,7 +84,7 @@ export default function WeeklyPlan() {
                                 <label>Dinner</label>
                             </div>
                             <div className="col-75">
-                                <select id="type" name="type">
+                                <select id="dinner-selection" name="type" onChange={handleChange}>
                                     <option value="0">=== Select a recipe ===</option>
                                     {dinnerOptions}
                                 </select>

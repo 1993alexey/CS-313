@@ -6,12 +6,22 @@ export function getRecipes() {
     return fetch('/api/mealPlanner/getRecipes').then(res => res.json())
 }
 
-export function savePlan(plan) {
+export function getRecipeTypes() {
+    return fetch('/api/mealPlanner/getRecipeTypes').then(res => res.json())
+}
 
+export function savePlan(plan) {
+    fetch('/api/mealPlanner/savePlan', {
+        method: 'POST',
+        body: JSON.stringify(plan)
+    })
 }
 
 export function addRecipe(recipe) {
-
+    return fetch('/api/mealPlanner/addRecipe', {
+        method: 'POST',
+        body: JSON.stringify(recipe)
+    })
 }
 
 
